@@ -1,6 +1,11 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
-  }
+    "strict": true,
+    // enable absolute imports
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./src/*"],
+    },
+  },
 }
