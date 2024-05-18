@@ -4,6 +4,8 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 // navigation types for auth stack
 // (screens that are only accessible when user is not authenticated)
 export type AuthStackParamList = {
+  SplashScreen: undefined;
+  Onboarding: undefined;
   Welcome: undefined;
   SignIn: undefined;
   SignUp: undefined;

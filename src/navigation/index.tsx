@@ -11,10 +11,7 @@ const Navigation = () => {
   console.log(`user`, JSON.stringify(user, null, 2));
 
   // useEffect(() => {
-  //   updateUser({
-  //     email: "aa@gmail.com",
-  //     name: "aa"
-  //   });
+  //   updateUser(null);
 
   //   return () => {};
   // }, []);
