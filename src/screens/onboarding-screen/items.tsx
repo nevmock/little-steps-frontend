@@ -33,9 +33,9 @@ const OnboardingItems: React.FC<ItemsProps> = ({ item }) => {
           })}
         </Text>
         <Text style={styles.description}>{item.description}</Text>
-        <View style={{ marginLeft: -10, marginTop: 20 }}>
-          <Paginator data={slides} scrollX={scrollX} />
-        </View>
+        {/* <View style={{ marginLeft: -10, marginTop: 20 }}> */}
+        {/*   <Paginator data={slides} scrollX={scrollX} /> */}
+        {/* </View> */}
       </View>
     </View>
   );

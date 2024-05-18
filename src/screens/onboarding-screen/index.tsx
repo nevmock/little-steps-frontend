@@ -9,6 +9,7 @@ import useOnboardingStore from "store/useOnboardingStroe";
 const OnboardingScreen = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const setScrollX = useOnboardingStore((state) => state.setScrollX);
+  const scrollX = useOnboardingStore((state) => state.scrollX);
   const slidesRef = useRef(null);
 
   const viewableItemsChanged = useRef(({ viewableItems }: { viewableItems: ViewToken[] }) => {
@@ -26,7 +27,7 @@ const OnboardingScreen = () => {
 
   return (
     <View style={styles.container}>
-      <View style={{ flex: 3 }}>
+      <View style={{ flex: 1 }}>
         <FlatList
           data={slides}
           renderItem={({ item }) => <OnboardingItems item={item} />}
@@ -43,7 +44,9 @@ const OnboardingScreen = () => {
         />
       </View>
 
-      {/* <Paginator data={slides} scrollX={scrollX} /> */}
+      <View style={styles.paginator}>
+        <Paginator data={slides} scrollX={scrollX} />
+      </View>
     </View>
   );
 };
@@ -54,6 +57,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
+    alignItems: "center",
+  },
+  paginator: {
+    position: "absolute",
+    bottom: 133,
+    left: -283,
+    right: 0,
     alignItems: "center",
   },
 });
