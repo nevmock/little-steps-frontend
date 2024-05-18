@@ -1,8 +1,10 @@
-import { StyleSheet, Text, View, useWindowDimensions, Image } from "react-native";
-import React from "react";
+import { StyleSheet, Text, View, useWindowDimensions, Image, Animated } from "react-native";
+import React, { useRef } from "react";
 
-import { Slide } from "./slides";
+import { Slide, slides } from "./slides";
 import { colors } from "utils/theme/colors";
+import Paginator from "./paginator";
+import useOnboardingStore from "store/useOnboardingStroe";
 
 interface ItemsProps {
   item: Slide;
@@ -10,13 +12,14 @@ interface ItemsProps {
 
 const OnboardingItems: React.FC<ItemsProps> = ({ item }) => {
   const { width } = useWindowDimensions();
+  const scrollX = useOnboardingStore((state) => state.scrollX);
 
   const titleWords = item.title.split(" ");
   return (
     <View style={[styles.container, { width }]}>
       <Image source={item.image} style={[styles.image, { width, resizeMode: "contain" }]} />
 
-      <View style={{ flex: 0.3 }}>
+      <View style={{ flex: 0.3, marginHorizontal: 20 }}>
         <Text style={styles.title}>
           {titleWords.map((word, index) => {
             if (index >= item.highlightIndexStart && index <= item.highlightIndexEnd) {
@@ -30,6 +33,9 @@ const OnboardingItems: React.FC<ItemsProps> = ({ item }) => {
           })}
         </Text>
         <Text style={styles.description}>{item.description}</Text>
+        <View style={{ marginLeft: -10, marginTop: 20 }}>
+          <Paginator data={slides} scrollX={scrollX} />
+        </View>
       </View>
     </View>
   );
@@ -53,7 +59,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     marginTop: 20,
     marginBottom: 10,
-    marginHorizontal: 20,
     color: "#000000",
     textAlign: "left",
   },
@@ -62,7 +67,6 @@ const styles = StyleSheet.create({
     color: colors.primary,
   },
   description: {
-    marginHorizontal: 20,
     fontWeight: "400",
     color: "#605B57",
     textAlign: "left",
