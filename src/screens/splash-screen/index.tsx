@@ -13,14 +13,14 @@ const SplashScreen = () => {
   const navigation = useNavigation<SplashScreenNavigationProp>();
   const logo = require("../../../assets/logo.png");
 
-  // useEffect(() => {
-  //   // Simulate a delay for the splash screen
-  //   const timer = setTimeout(() => {
-  //     navigation.replace("Onboarding");
-  //   }, 2000);
+  useEffect(() => {
+    // Simulate a delay for the splash screen
+    const timer = setTimeout(() => {
+      navigation.replace("Onboarding");
+    }, 2000);
 
-  //   return () => clearTimeout(timer);
-  // }, [navigation]);
+    return () => clearTimeout(timer);
+  }, [navigation]);
 
   return (
     <View style={styles.container}>
