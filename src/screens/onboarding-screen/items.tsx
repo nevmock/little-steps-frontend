@@ -19,7 +19,7 @@ const OnboardingItems: React.FC<ItemsProps> = ({ item }) => {
     <View style={[styles.container, { width }]}>
       <Image source={item.image} style={[styles.image, { width, resizeMode: "contain" }]} />
 
-      <View style={{ flex: 0.3, marginHorizontal: 20 }}>
+      <View style={{ flex: 0.5, marginHorizontal: 20 }}>
         <Text style={styles.title}>
           {titleWords.map((word, index) => {
             if (index >= item.highlightIndexStart && index <= item.highlightIndexEnd) {
@@ -33,9 +33,6 @@ const OnboardingItems: React.FC<ItemsProps> = ({ item }) => {
           })}
         </Text>
         <Text style={styles.description}>{item.description}</Text>
-        {/* <View style={{ marginLeft: -10, marginTop: 20 }}> */}
-        {/*   <Paginator data={slides} scrollX={scrollX} /> */}
-        {/* </View> */}
       </View>
     </View>
   );
