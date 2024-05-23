@@ -2,6 +2,7 @@ export const palette = {
   white: "#ffffff",
   primary: "#E43E76",
   lightGray: "#EDECEF",
+  grayText: "#605B57",
   gray550: "#939292",
   gray650: "#8a8a8a",
   gray4: "#898681",
@@ -371,8 +372,6 @@ export const colors = {
   pink800: palette.pink800,
   pink900: palette.pink900,
 
-  rose50: palette.rose50,
-  rose100: palette.rose100,
   rose200: palette.rose200,
   rose300: palette.rose300,
   rose400: palette.rose400,

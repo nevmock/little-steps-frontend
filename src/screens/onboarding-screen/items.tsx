@@ -1,4 +1,5 @@
-import { StyleSheet, Text, View, useWindowDimensions, Image, Animated } from "react-native";
+import { StyleSheet, View, useWindowDimensions, Image, Animated } from "react-native";
+import { Text } from "../../utils/theme";
 import React, { useRef } from "react";
 
 import { Slide, slides } from "./slides";
@@ -20,11 +21,11 @@ const OnboardingItems: React.FC<ItemsProps> = ({ item }) => {
       <Image source={item.image} style={[styles.image, { width, resizeMode: "contain" }]} />
 
       <View style={{ flex: 0.5, marginHorizontal: 20 }}>
-        <Text style={styles.title}>
+        <Text variant="text2Xl" style={styles.title}>
           {titleWords.map((word, index) => {
             if (index >= item.highlightIndexStart && index <= item.highlightIndexEnd) {
               return (
-                <Text key={index} style={styles.highlighted}>
+                <Text variant="textBold" key={index} style={styles.highlighted}>
                   {word}{" "}
                 </Text>
               );
@@ -64,7 +65,8 @@ const styles = StyleSheet.create({
     color: colors.primary,
   },
   description: {
-    fontWeight: "400",
+    fontFamily: "Poppins_400Regular",
+    fontSize: 13,
     color: "#605B57",
     textAlign: "left",
   },

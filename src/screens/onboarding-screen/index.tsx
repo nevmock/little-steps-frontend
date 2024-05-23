@@ -1,12 +1,5 @@
-import {
-  FlatList,
-  StyleSheet,
-  Text,
-  View,
-  Animated,
-  ViewToken,
-  TouchableOpacity,
-} from "react-native";
+import { FlatList, StyleSheet, View, Animated, ViewToken, TouchableOpacity } from "react-native";
+import { Text } from "utils/theme";
 import React, { useState, useRef } from "react";
 
 import { slides } from "./slides";
@@ -60,7 +53,17 @@ const OnboardingScreen = () => {
   return (
     <SafeAreaWrapper>
       <LinearGradient
-        colors={["#FAFAFA", "#F6E5EB", "#F5E1E8", "#F4DCE4", "#F5E1E8", "#F6E5EB", "#FAFAFA"]}
+        colors={[
+          "#FFFFFF",
+          "#FAFAFA",
+          "#F6E5EB",
+          "#F5E1E8",
+          "#F4DCE4",
+          "#F5E1E8",
+          "#F6E5EB",
+          "#FAFAFA",
+          "#FFFFFF",
+        ]}
         style={styles.background}
       >
         <View style={styles.container}>
@@ -85,13 +88,15 @@ const OnboardingScreen = () => {
             <Paginator data={slides} scrollX={scrollX} />
             {currentIndex < 2 && (
               <View style={styles.nextButton}>
+                <TouchableOpacity onPress={handleSkipPress}>
+                  <Text variant="textBase" color="grey" style={styles.skip}>
+                    Lewati
+                  </Text>
+                </TouchableOpacity>
                 <NextButton
                   scrollTo={scrollTo}
                   percentage={(currentIndex + 1) * (100 / slides.length)}
                 />
-                <TouchableOpacity onPress={handleSkipPress}>
-                  <Text style={styles.skip}>Lewati</Text>
-                </TouchableOpacity>
               </View>
             )}
             {currentIndex === 2 && (
@@ -129,8 +134,10 @@ const styles = StyleSheet.create({
   nextButton: {
     flexDirection: "row",
     alignItems: "center",
-    paddingHorizontal: 20,
+    width: "100%",
+    paddingHorizontal: 40,
     marginTop: 20,
+    marginLeft: 543,
   },
   daftarButton: {
     flexDirection: "row",
