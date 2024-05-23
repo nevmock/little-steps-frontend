@@ -19,6 +19,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { AuthStackParamList } from "navigation/types";
+import Button from "components/Button";
 
 type OnboardingNavigationTypeProps = NativeStackNavigationProp<AuthStackParamList, "SplashScreen">;
 
@@ -82,22 +83,22 @@ const OnboardingScreen = () => {
 
           <View style={styles.paginator}>
             <Paginator data={slides} scrollX={scrollX} />
-            <View style={styles.nextButton}>
-              <NextButton
-                scrollTo={scrollTo}
-                percentage={(currentIndex + 1) * (100 / slides.length)}
-              />
-              {currentIndex < 2 && (
+            {currentIndex < 2 && (
+              <View style={styles.nextButton}>
+                <NextButton
+                  scrollTo={scrollTo}
+                  percentage={(currentIndex + 1) * (100 / slides.length)}
+                />
                 <TouchableOpacity onPress={handleSkipPress}>
                   <Text style={styles.skip}>Lewati</Text>
                 </TouchableOpacity>
-              )}
-              {currentIndex === 2 && (
-                <TouchableOpacity onPress={navigateLogin}>
-                  <Text style={styles.skip}>Login</Text>
-                </TouchableOpacity>
-              )}
-            </View>
+              </View>
+            )}
+            {currentIndex === 2 && (
+              <TouchableOpacity style={styles.daftarButton} onPress={navigateLogin}>
+                <Button name="Daftar" width={330} />
+              </TouchableOpacity>
+            )}
           </View>
         </View>
       </LinearGradient>
@@ -130,6 +131,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 20,
     marginTop: 20,
+  },
+  daftarButton: {
+    flexDirection: "row",
+    width: 500,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 20,
+    marginLeft: 283,
   },
   skip: {
     fontSize: 16,
