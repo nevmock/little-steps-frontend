@@ -1,6 +1,7 @@
 export const palette = {
   white: "#ffffff",
-  primary: "#E43E76",
+  primary: "#E64078",
+  secondary: "#E43E76",
   lightGray: "#EDECEF",
   grayText: "#605B57",
   gray550: "#939292",
@@ -169,8 +170,6 @@ export const palette = {
   fuchsia700: "#a21caf",
   fuchsia800: "#86198f",
   fuchsia900: "#701a75",
-
-  pink50: "#fdf2f8",
   pink100: "#fce7f3",
   pink200: "#fbcfe8",
   pink300: "#f9a8d4",
@@ -198,6 +197,8 @@ export const colors = {
   lightGray: palette.lightGray,
   gray550: palette.gray550,
   gray650: palette.gray650,
+  grayText: palette.grayText,
+  secondary: palette.secondary,
   gray4: palette.gray4,
   gray5: palette.gray5,
   gray8: palette.gray8,
@@ -361,7 +362,6 @@ export const colors = {
   fuchsia800: palette.fuchsia800,
   fuchsia900: palette.fuchsia900,
 
-  pink50: palette.pink50,
   pink100: palette.pink100,
   pink200: palette.pink200,
   pink300: palette.pink300,

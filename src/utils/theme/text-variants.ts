@@ -11,6 +11,7 @@ export const textVariants = {
     lineHeight: 18,
   },
   textBase: {
+    fontFamily: "Poppins_400Regular",
     fontSize: 16,
     lineHeight: 24,
   },
@@ -19,7 +20,8 @@ export const textVariants = {
     lineHeight: 28,
   },
   textXl: {
-    fontSize: 20,
+    fontFamily: "Poppins_800ExtraBold",
+    fontSize: 22,
     lineHeight: 28,
   },
   text2Xl: {
