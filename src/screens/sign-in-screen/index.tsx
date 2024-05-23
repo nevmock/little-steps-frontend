@@ -1,4 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
+import Input from "components/shared/input";
+import SafeAreaWrapper from "components/shared/safe-area-wrapper";
 import { AuthScreenNavigationType } from "navigation/types";
 import React from "react";
 import { Button } from "react-native";
@@ -10,10 +12,12 @@ const SignInScreen = () => {
     navigation.navigate("SignUp");
   };
   return (
-    <Box>
-      <Text>Sign in Screen</Text>
-      <Button title="Sign up" onPress={navigateToSignUp} />
-    </Box>
+    <SafeAreaWrapper>
+      <Box>
+        <Text>Sign in Screen</Text>
+        <Button title="Sign up" onPress={navigateToSignUp} />
+      </Box>
+    </SafeAreaWrapper>
   );
 };
 

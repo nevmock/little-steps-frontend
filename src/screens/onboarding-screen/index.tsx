@@ -46,8 +46,8 @@ const OnboardingScreen = () => {
     }
   };
 
-  const navigateLogin = () => {
-    navigation.navigate("SignIn");
+  const navigateSignup = () => {
+    navigation.navigate("SignUp");
   };
 
   return (
@@ -89,7 +89,7 @@ const OnboardingScreen = () => {
             {currentIndex < 2 && (
               <View style={styles.nextButton}>
                 <TouchableOpacity onPress={handleSkipPress}>
-                  <Text variant="textBase" color="grey" style={styles.skip}>
+                  <Text variant="textBase" color="grayText" style={styles.skip}>
                     Lewati
                   </Text>
                 </TouchableOpacity>
@@ -100,8 +100,13 @@ const OnboardingScreen = () => {
               </View>
             )}
             {currentIndex === 2 && (
-              <TouchableOpacity style={styles.daftarButton} onPress={navigateLogin}>
-                <Button name="Daftar" width={330} />
+              <TouchableOpacity style={styles.daftarButton}>
+                <Button
+                  label="Daftar"
+                  width={370}
+                  onPress={navigateSignup}
+                  onLongPress={navigateSignup}
+                />
               </TouchableOpacity>
             )}
           </View>
