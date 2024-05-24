@@ -15,7 +15,7 @@ const SignUpScreen = () => {
   };
   return (
     <SafeAreaWrapper>
-      <Box flex={1} px="8" mt="10">
+      <Box flex={1} px="8" justifyContent="center">
         <Text variant="textXl" fontWeight={800}>
           Daftarkan Diri,
         </Text>
@@ -26,9 +26,9 @@ const SignUpScreen = () => {
         <Box mb="5" />
         <Input label="Email" />
         <Box mb="5" />
-        <Input label="Kata Sandi" />
+        <Input label="Kata Sandi" secureTextEntry={true} />
         <Box mb="5" />
-        <Input label="Konfirmasi Kata Sandi" />
+        <Input label="Konfirmasi Kata Sandi" secureTextEntry={true} />
         <Box height={57} />
         <Button label="Daftar" onPress={navigateToSignIn} />
         <Box height={57} />

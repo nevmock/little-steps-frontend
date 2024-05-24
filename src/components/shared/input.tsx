@@ -6,15 +6,25 @@ import { colors } from "utils/theme/colors";
 type InputProps = {
   label: string;
   error?: undefined;
+  secureTextEntry?: boolean;
 } & TextInputProps;
 
-const Input = ({ label }: InputProps) => {
+const Input = ({ label, secureTextEntry }: InputProps) => {
   return (
     <Box flexDirection="column">
       <Text mb="5" variant="textXs">
         {label}
       </Text>
-      <TextInput style={{ borderBottomWidth: 1, borderColor: colors.primary }} />
+      <TextInput
+        secureTextEntry={secureTextEntry}
+        style={{
+          borderBottomWidth: 1,
+          borderColor: colors.primary,
+          paddingBottom: 10,
+          fontFamily: "Poppins_600SemiBold",
+          fontSize: 17,
+        }}
+      />
     </Box>
   );
 };

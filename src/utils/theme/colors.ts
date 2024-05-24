@@ -1,6 +1,7 @@
 export const palette = {
   white: "#ffffff",
   primary: "#E64078",
+  pink: "#E64078",
   secondary: "#E43E76",
   lightGray: "#EDECEF",
   grayText: "#605B57",
@@ -206,6 +207,7 @@ export const colors = {
   transparent: palette.transparent,
   grey: palette.grey,
   primary: palette.primary,
+  pink: palette.pink,
 
   /**tailwind colors */
 
